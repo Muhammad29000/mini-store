@@ -1,0 +1,54 @@
+@if (notification()) {
+  <div class="toast-notification" role="status">
+    <span class="toast-icon">✓</span>
+
+    <div class="toast-content">
+      <strong>SUCCESS</strong>
+      <p>{{ notification() }}</p>
+    </div>
+  </div>
+}
+@if (product(); as item) {
+
+  <section class="product-details">
+
+    <div class="details-image">
+      <img [src]="item.image" [alt]="item.title">
+    </div>
+
+    <div class="details-info">
+
+      <span class="category">{{ item.category }}</span>
+
+      <h1>{{ item.title }}</h1>
+
+      <p class="rating">
+        ⭐ {{ item.rating.rate }} / 5
+        ({{ item.rating.count }} reviews)
+      </p>
+
+      <h2 class="price">${{ item.price }}</h2>
+
+      <p class="description">
+        {{ item.description }}
+      </p>
+
+    <button class="cart-btn" (click)="addToCart()">
+  Add to Cart
+</button>
+
+<button class="wishlist-btn" (click)="addToWishlist()">
+  ♥ Add to Wishlist
+</button>
+
+      <a routerLink="/shop" class="back-link">
+        ← Back to Shop
+      </a>
+
+    </div>
+
+  </section>
+
+} @else {
+  <p class="loading">Loading product details...</p>
+}

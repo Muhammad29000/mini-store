@@ -1,0 +1,53 @@
+
+@if (order(); as currentOrder) {
+
+  <section class="confirmation-page">
+
+    <div class="confirmation-card">
+
+      <div class="success-icon">
+        ✓
+      </div>
+
+      <span class="confirmation-tag">MINISTORE</span>
+
+      <h1>Thank You For Your Order!</h1>
+
+      <p class="success-message">
+        Your order has been placed successfully.
+        We appreciate your shopping with us.
+      </p>
+
+      <div class="order-number">
+        <span>ORDER DATE</span>
+        <strong>{{ currentOrder.date | date:'medium' }}</strong>
+      </div>
+
+      <div class="customer-details">
+        <h2>Delivery Information</h2>
+
+        <p><strong>Name:</strong> {{ currentOrder.customer.fullName }}</p>
+        <p><strong>Email:</strong> {{ currentOrder.customer.email }}</p>
+        <p><strong>Phone:</strong> {{ currentOrder.customer.phone }}</p>
+        <p><strong>Address:</strong> {{ currentOrder.customer.address }}</p>
+        <p><strong>City:</strong> {{ currentOrder.customer.city }}</p>
+      </div>
+
+      <div class="confirmed-total">
+        <span>Order Total</span>
+        <strong>${{ currentOrder.total.toFixed(2) }}</strong>
+      </div>
+
+      <p class="payment-method">
+        Payment Method: Cash on Delivery
+      </p>
+
+      <a routerLink="/shop" class="continue-shopping">
+        Continue Shopping →
+      </a>
+
+    </div>
+
+  </section>
+
+}

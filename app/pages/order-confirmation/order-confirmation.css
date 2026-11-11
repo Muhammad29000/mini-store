@@ -1,0 +1,148 @@
+.confirmation-page {
+  min-height: 650px;
+  padding: 70px 7%;
+  background: #F5F1EA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirmation-card {
+  width: 100%;
+  max-width: 760px;
+  background: #fff;
+  border: 1px solid #eee8df;
+  padding: 55px;
+  text-align: center;
+}
+
+.success-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  margin: 0 auto 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eaf3e9;
+  color: #39834a;
+  font-size: 36px;
+}
+
+.confirmation-tag {
+  color: #9A8062;
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.confirmation-card h1 {
+  color: #171717;
+  font-size: 34px;
+  margin: 16px 0;
+}
+
+.success-message {
+  color: #777;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.order-number {
+  background: #F5F1EA;
+  padding: 18px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.order-number span {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #9A8062;
+  font-weight: 700;
+}
+
+.order-number strong {
+  font-size: 14px;
+  color: #171717;
+}
+
+.customer-details {
+  text-align: left;
+  border: 1px solid #eee8df;
+  padding: 25px;
+  margin-bottom: 25px;
+}
+
+.customer-details h2 {
+  font-size: 20px;
+  color: #171717;
+  margin: 0 0 18px;
+}
+
+.customer-details p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 10px 0;
+  overflow-wrap: anywhere;
+}
+
+.customer-details strong {
+  color: #171717;
+}
+
+.confirmed-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-top: 1px solid #eee8df;
+  color: #171717;
+  font-size: 18px;
+}
+
+.confirmed-total strong {
+  color: #9A8062;
+}
+
+.payment-method {
+  color: #777;
+  font-size: 14px;
+  margin: 5px 0 25px;
+}
+
+.continue-shopping {
+  display: inline-block;
+  background: #171717;
+  color: #fff;
+  text-decoration: none;
+  padding: 15px 30px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.continue-shopping:hover {
+  background: #9A8062;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 600px) {
+  .confirmation-page {
+    padding: 40px 5%;
+  }
+
+  .confirmation-card {
+    padding: 30px 20px;
+  }
+
+  .confirmation-card h1 {
+    font-size: 27px;
+  }
+
+  .customer-details {
+    padding: 18px;
+  }
+}

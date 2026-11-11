@@ -1,0 +1,60 @@
+<section class="hero">
+
+  <div class="hero-content">
+    <span class="hero-tag">WELCOME TO MINISTORE</span>
+
+    <h1>Discover Your <span>Perfect Style</span></h1>
+
+    <p>
+      Explore our amazing collection of products.
+      Find everything you love, all in one place.
+    </p>
+
+    <a routerLink="/shop" class="shop-btn">Shop Now →</a>
+  </div>
+
+  <div class="hero-image">
+    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800"
+         alt="MiniStore Shopping">
+  </div>
+
+</section>
+<section class="featured-products">
+
+  <div class="section-heading">
+    <span>OUR COLLECTION</span>
+    <h2>Featured Products</h2>
+    <p>Explore our handpicked collection.</p>
+  </div>
+
+  <div class="products-grid">
+
+   @for (product of products().slice(0, 4); track product.id) {
+
+      <div class="product-card">
+
+        <img [src]="product.image" [alt]="product.title">
+
+        <div class="product-info">
+          <h3>{{ product.title }}</h3>
+
+          <p class="price">
+            ${{ product.price }}
+          </p>
+
+          <p class="rating">
+            ⭐ {{ product.rating.rate }} ({{ product.rating.count }})
+          </p>
+
+          <a [routerLink]="['/product', product.id]">
+            View Product
+          </a>
+        </div>
+
+      </div>
+
+    }
+
+  </div>
+
+</section>

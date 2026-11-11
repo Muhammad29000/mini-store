@@ -1,0 +1,57 @@
+
+<section class="wishlist-page">
+
+  <div class="wishlist-heading">
+    <span>YOUR FAVOURITES</span>
+    <h1>My Wishlist</h1>
+    <p>Your favourite products, all in one place.</p>
+  </div>
+
+  @if (wishlistService.wishlistItems().length > 0) {
+
+    <div class="wishlist-grid">
+
+      @for (product of wishlistService.wishlistItems(); track product.id) {
+
+        <div class="wishlist-card">
+
+          <div class="wishlist-image">
+            <img [src]="product.image" [alt]="product.title">
+          </div>
+
+          <div class="wishlist-info">
+            <span class="category">{{ product.category }}</span>
+
+            <h3>{{ product.title }}</h3>
+
+            <p class="price">${{ product.price }}</p>
+
+            <div class="wishlist-actions">
+              <a [routerLink]="['/product', product.id]">
+                View Product
+              </a>
+
+              <button (click)="removeFromWishlist(product.id)">
+                Remove ♥
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+
+      }
+
+    </div>
+
+  } @else {
+
+    <div class="empty-wishlist">
+      <h2>Your Wishlist is Empty</h2>
+      <p>You haven't saved any favourite products yet.</p>
+      <a routerLink="/shop">Explore Products</a>
+    </div>
+
+  }
+
+</section>

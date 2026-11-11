@@ -1,0 +1,32 @@
+<nav class="navbar">
+
+  <a routerLink="/" class="logo">MiniStore</a>
+
+  <div class="nav-links">
+
+    <a routerLink="/" routerLinkActive="active"
+       [routerLinkActiveOptions]="{ exact: true }">
+      Home
+    </a>
+
+    <a routerLink="/shop" routerLinkActive="active">
+      Shop
+    </a>
+
+    <a routerLink="/wishlist" routerLinkActive="active">
+      Wishlist
+      <span class="nav-count">{{ wishlistCount() }}</span>
+    </a>
+
+    <a routerLink="/cart" routerLinkActive="active">
+      Cart
+      <span class="nav-count">{{ cartCount() }}</span>
+    </a>
+
+    <a routerLink="/contact" routerLinkActive="active">
+      Contact
+    </a>
+
+  </div>
+
+</nav>

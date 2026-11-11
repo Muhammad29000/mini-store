@@ -1,0 +1,90 @@
+<section class="shop-page">
+
+  <div class="shop-heading">
+    <span>EXPLORE MINISTORE</span>
+    <h1>Our Collection</h1>
+    <p>Discover products you'll love.</p>
+  </div>
+
+  <div class="shop-search">
+    <input
+      type="text"
+      placeholder="Search products by name..."
+      [value]="searchTerm()"
+      (input)="searchTerm.set($any($event.target).value)"
+    >
+    <span>⌕</span>
+  </div>
+<div class="category-filter">
+
+  <label for="category">Filter by Category:</label>
+
+  <select
+    id="category"
+    [value]="selectedCategory()"
+    (change)="selectedCategory.set($any($event.target).value)"
+  >
+    <option value="all">All Categories</option>
+
+    @for (category of categories(); track category) {
+      <option [value]="category">
+        {{ category }}
+      </option>
+    }
+
+  </select>
+
+</div>
+<div class="sort-filter">
+
+  <label for="sort">Sort By:</label>
+
+  <select
+    id="sort"
+    [value]="sortOrder()"
+    (change)="sortOrder.set($any($event.target).value)"
+  >
+    <option value="default">Featured</option>
+    <option value="low-to-high">Price: Low to High</option>
+    <option value="high-to-low">Price: High to Low</option>
+  </select>
+
+</div>
+  <div class="shop-grid">
+
+    @for (product of filteredProducts(); track product.id) {
+
+      <div class="shop-card">
+
+        <div class="shop-image">
+          <img [src]="product.image" [alt]="product.title">
+        </div>
+
+        <div class="shop-info">
+          <span class="category">{{ product.category }}</span>
+
+          <h3>{{ product.title }}</h3>
+
+          <p class="shop-price">${{ product.price }}</p>
+
+          <p class="shop-rating">
+            ⭐ {{ product.rating.rate }} ({{ product.rating.count }})
+          </p>
+
+          <a [routerLink]="['/product', product.id]">
+            View Product
+          </a>
+        </div>
+
+      </div>
+
+    } @empty {
+      <div class="no-products">
+        <h2>No Products Found</h2>
+        <p>Try searching with another product name.</p>
+      </div>
+    }
+
+  </div>
+
+</section>
